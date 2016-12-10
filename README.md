@@ -5,9 +5,12 @@ I have seen a variety of approaches to address this. For example, first working 
 The code in "merging and appending.do" provides what in my opinion is the most efficient way to merge several files using a loop.
 
 In essence, first creating a file that contains zero observations and has defined variables on which the datasets are going to be merged ("id" in this example)
+
     clear
     gen id = .
+
 and then in a loop merging onto it the remaining files:
+
     foreach i of numlist 1 2 3 {
         merge 1:1 id using `file`i'', nogen
     }
