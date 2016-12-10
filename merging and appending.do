@@ -5,10 +5,10 @@ cd "C:/Users/.../your_directory"
 * As an example, create file1, file2 and file3 that would be merged/appended on "id" variable
 foreach i of numlist 1 2 3 {
     clear
-	set obs `=2 * `i''
-	gen id = _n
-	gen var`i' = `i'
-	save file`i', replace
+    set obs `=2 * `i''
+    gen id = _n
+    gen var`i' = `i'
+    save file`i', replace
 }
 
 * ************************************************************************
@@ -20,7 +20,7 @@ foreach i of numlist 1 2 3 {
 clear
 gen id = .
 foreach i of numlist 1 2 3 {
-	merge 1:1 id using file`i', nogen
+    merge 1:1 id using file`i', nogen
 }
 save merged, replace
 
@@ -37,7 +37,7 @@ save appended, replace
 foreach i of numlist 1 2 3 {
     use file`i', clear
     * Here code to make computations as needed.
-	append using appended
+    append using appended
     save appended, replace
 }
 
