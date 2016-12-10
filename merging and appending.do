@@ -57,7 +57,7 @@ save all_files, replace
 * 4. Other tidbits - Can skip saving the initial empty file (from example 2) and instead use "capture" so that
 * Stata would overlook the error when it tries to append something to a non-existing dataset. In the next line
 * the dataset is saved, so on the subsequent runs of the loop we append files to it.
-* This method is dangerous because if the dataset "appended.dta" becomes engaged somewhere else (i.e. if for some
+* This method is dangerous because if the dataset "appended2.dta" becomes engaged somewhere else (i.e. if for some
 * reason Stata could not open it at the moment), then the loop will overwrite the file with a new (incomplete) one.
 * ************************************************************************
 clear
